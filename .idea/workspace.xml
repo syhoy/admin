@@ -3,6 +3,44 @@
   <component name="ChangeListManager">
     <list default="true" id="1353e5d3-00ed-423e-aaae-7cc837869a91" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/DataInit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/assembler/GroupModelAssembler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/assembler/RoleModelAssembler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/assembler/RootModelAssembler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/assembler/UserModelAssembler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/GroupController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/RoleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/UserGroupController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/WebController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/entity/GroupEntity$GroupEntityBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/entity/GroupEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/entity/RoleEntity$RoleEntityBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/entity/RoleEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/entity/UserEntity$UserEntityBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/entity/UserEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/entity/UserGroupEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/GroupModel$GroupModelBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/GroupModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/RoleModel$RoleModelBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/RoleModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/RootModel$RootModelBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/RootModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/UserModel$UserModelBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/UserModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/repository/GroupRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/repository/RoleRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/repository/UserGroupRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/service/GroupService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/service/Impl/GroupServiseImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/service/Impl/RoleServiseImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/service/Impl/UserGroupServiseImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/service/Impl/UserServiseImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/service/RoleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/service/UserGroupService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/service/UserService.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,7 +58,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/controller/WebController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
+            <state relative-caret-position="561">
               <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -32,7 +70,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
+            <state relative-caret-position="1360">
               <caret line="80" selection-start-line="80" selection-end-line="80" />
             </state>
           </provider>
@@ -41,7 +79,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/demo/service/Impl/RoleServiseImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
+            <state relative-caret-position="391">
               <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
             </state>
           </provider>
@@ -62,7 +100,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/entity/UserEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
+            <state relative-caret-position="476">
               <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -74,7 +112,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
+            <state relative-caret-position="408">
               <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -86,7 +124,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/DataInit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
+            <state relative-caret-position="442">
               <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -143,6 +181,9 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="764c23e3-da96-4038-8f56-1d23d1584f1f" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -224,8 +265,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -475,7 +516,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585042064728</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fist commit+">
+      <created>1585050936496</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1585050936496</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -513,7 +561,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31130064" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31449893" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -543,7 +591,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fist commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="fist commit" />
+    <MESSAGE value="fist commit+" />
+    <option name="LAST_COMMIT_MESSAGE" value="fist commit+" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/target/classes/application.yml">
@@ -819,6 +868,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/controller/WebController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/demo/service/Impl/RoleServiseImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/entity/UserEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/DataInit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/model/GroupModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -840,60 +943,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/entity/UserEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/DataInit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/controller/WebController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/demo/service/Impl/RoleServiseImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
         </state>
       </provider>
     </entry>
