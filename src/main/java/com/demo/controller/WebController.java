@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -61,18 +62,77 @@ public class WebController {
 
     @GetMapping(value="/api/root", produces = "application/hal+json")
     public ResponseEntity<RootModel> getRoot() {
+        RootModel rootModel = new RootModel(linkTo(methodOn(WebController.class).getRoot()).withSelfRel());
+
+        return new ResponseEntity<>(rootModel,HttpStatus.OK);
+    }
+
+
+    @GetMapping(value="/api/root/user", produces = "application/hal+json")
+    public ResponseEntity<RootModel> getRootUser() {
         RootModel rootModel = new RootModel();
 
-        Link link = linkTo(methodOn(WebController.class).getRoot()).withSelfRel();
+        Link link = linkTo(methodOn(WebController.class).getRootUser()).withSelfRel();
         rootModel.add(link);
 
         List<UserEntity> userList = userRepository.findAll();
 
         CollectionModel<UserModel> userModels = userModelAssembler.toCollectionModel(userList);
         rootModel.setUserList(userModels);
-        return new ResponseEntity<>(
-                rootModel,
-                HttpStatus.OK);
+
+        return new ResponseEntity<>(rootModel,HttpStatus.OK);
+    }
+
+    @GetMapping(value="/api/root/user/{id}", produces = "application/hal+json")
+    public ResponseEntity<RootModel> getRootUserById(@PathVariable(name = "id") Integer id) {
+        RootModel rootModel = new RootModel();
+
+        Link link = linkTo(methodOn(WebController.class).getRootUserById(id)).withSelfRel();
+        rootModel.add(link);
+
+        List<UserEntity> userList = new ArrayList<>();
+
+        userRepository.findById(id).ifPresent(u->userList.add(u));
+
+        CollectionModel<UserModel> userModels = userModelAssembler.toCollectionModel(userList);
+        rootModel.setUserList(userModels);
+
+        return new ResponseEntity<>(rootModel,HttpStatus.OK);
+    }
+
+    @GetMapping(value="/api/root/group", produces = "application/hal+json")
+    public ResponseEntity<RootModel> getRootGroup() {
+
+
+        RootModel rootModel = new RootModel();
+
+        Link link = linkTo(methodOn(WebController.class).getRootGroup()).withSelfRel();
+        rootModel.add(link);
+
+        List<GroupEntity> groupList = groupRepository.findAll();
+
+        CollectionModel<GroupModel> groupModels = groupModelAssembler.toCollectionModel(groupList);
+        rootModel.setGroupList(groupModels);
+
+        return new ResponseEntity<>(rootModel,HttpStatus.OK);
+    }
+
+
+    @GetMapping(value="/api/root/group/{id}", produces = "application/hal+json")
+    public ResponseEntity<RootModel> getRootGroupById(@PathVariable(name = "id") Integer id) {
+        RootModel rootModel = new RootModel();
+
+        Link link = linkTo(methodOn(WebController.class).getRootGroupById(id)).withSelfRel();
+        rootModel.add(link);
+
+        List<GroupEntity> groupList = new ArrayList<>();
+
+        groupRepository.findById(id).ifPresent(g->groupList.add(g));
+
+        CollectionModel<GroupModel> groupModels = groupModelAssembler.toCollectionModel(groupList);
+        rootModel.setGroupList(groupModels);
+
+        return new ResponseEntity<>(rootModel,HttpStatus.OK);
     }
 
 
@@ -90,9 +150,6 @@ public class WebController {
 
         Optional<UserEntity> user = userRepository.findById(id);
 
-        //Link link = linkTo(methodOn(WebController.class).getUserById(id)).withSelfRel();
-
-       //System.out.println("## link:"+link);
 
         return user.map(userModelAssembler::toModel)
                 .map(ResponseEntity::ok)
