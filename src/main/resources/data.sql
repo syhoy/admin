@@ -5,9 +5,7 @@ CREATE TABLE user (
   first_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
   role_id INT DEFAULT NULL,
-
   foreign key (role_id) references role(id)
-
 );
 
 
@@ -17,7 +15,6 @@ CREATE TABLE role(
   id INT AUTO_INCREMENT  PRIMARY KEY,
   role_name VARCHAR(50) NOT NULL,
 );
-
 
 
 DROP TABLE IF EXISTS groups;
