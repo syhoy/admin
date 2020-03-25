@@ -1,3 +1,5 @@
+
+--Таблица Подьзователи (Сотрудники)
 DROP TABLE IF EXISTS user;
 
 CREATE TABLE user (
@@ -5,12 +7,10 @@ CREATE TABLE user (
   first_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
   role_id INT DEFAULT NULL,
-
   foreign key (role_id) references role(id)
-
 );
 
-
+--Таблица Роли
 DROP TABLE IF EXISTS role;
 
 CREATE TABLE role(
@@ -18,8 +18,7 @@ CREATE TABLE role(
   role_name VARCHAR(50) NOT NULL,
 );
 
-
-
+--Таблица Группы
 DROP TABLE IF EXISTS groups;
 
 CREATE TABLE groups(
@@ -27,7 +26,7 @@ CREATE TABLE groups(
   group_name VARCHAR(50) NOT NULL,
 );
 
-
+--Таблица связи Пользоватедь - Группа
 DROP TABLE IF EXISTS user_group;
 
 CREATE TABLE user_group(

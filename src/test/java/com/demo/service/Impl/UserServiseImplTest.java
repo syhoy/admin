@@ -14,6 +14,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
+
 @SpringBootTest
 @RunWith(SpringRunner.class)
 
@@ -34,23 +35,6 @@ public class UserServiseImplTest {
 
         userList.forEach(u->
             System.out.println("## user:"+u));
-
-
-        // user.getGroupList().forEach(g->System.out.println("## group:"+g.getGroupName()));
-        //System.out.println("## user:"+user.getLastName());
-
-        //RoleEntity role = roleService.findById(2);
-        //System.out.println("## role:"+role.getRoleName());
-
-        //role.getUserList().forEach(x->System.out.println("## user:"+x.getLastName()));
-
-        //List<UserEntity> ul = role.getUserList();
-
-        //System.out.println("## userlist:"+ul);
-
-
-
-
     }
 
     @Test
