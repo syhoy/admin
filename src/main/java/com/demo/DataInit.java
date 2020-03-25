@@ -13,6 +13,8 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+
+//Заполнение данными БД
 @Component
 public class DataInit implements ApplicationRunner {
 
@@ -21,6 +23,7 @@ public class DataInit implements ApplicationRunner {
     private RoleRepository roleRepository;
 
     private GroupRepository groupRepository;
+
     private UserGroupRepository userGroupRepository;
 
     @Autowired
@@ -36,8 +39,8 @@ public class DataInit implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args)  {
-
-       GroupEntity group = new GroupEntity();
+        //Группы
+        GroupEntity group = new GroupEntity();
         group.setGroupName("Группа продленного дня");
         groupRepository.save(group);
 
@@ -57,9 +60,11 @@ public class DataInit implements ApplicationRunner {
         group.setGroupName("Группа сборщиков мебели");
         groupRepository.save(group);
 
+        group = new GroupEntity();
+        group.setGroupName("Группа крови на рукаве");
+        groupRepository.save(group);
 
-
-
+        //роли
         RoleEntity role1 = new RoleEntity();
         //role.setId(1);
         role1.setRoleName("Администратор");
@@ -70,7 +75,7 @@ public class DataInit implements ApplicationRunner {
         role2.setRoleName("Руководитель");
         roleRepository.save(role2);
 
-
+        //пользователи
         UserEntity user=new UserEntity();
         user.setFirstName("Иван");
         user.setLastName("Иванов");
@@ -95,7 +100,7 @@ public class DataInit implements ApplicationRunner {
         user.setRole(role2);
         userRepository.save(user);
 
-
+        //Связи пользоватедь - группа
         UserGroupEntity userGroup = new UserGroupEntity();
         userGroup.setGroupId(1);
         userGroup.setUserId(1);

@@ -64,6 +64,10 @@ public class WebController {
     public ResponseEntity<RootModel> getRoot() {
         RootModel rootModel = new RootModel(linkTo(methodOn(WebController.class).getRoot()).withSelfRel());
 
+        rootModel.add(linkTo(methodOn(WebController.class).getAllUser()).withRel("users"));
+        rootModel.add(linkTo(methodOn(WebController.class).getAllGroup()).withRel("groups"));
+        rootModel.add(linkTo(methodOn(WebController.class).getAllRole()).withRel("roles"));
+
         return new ResponseEntity<>(rootModel,HttpStatus.OK);
     }
 
@@ -136,6 +140,8 @@ public class WebController {
     }
 
 
+    //Ендпоинты для моделей:
+
     @GetMapping(value="/api/user", produces = "application/hal+json")
     public ResponseEntity<CollectionModel<UserModel>> getAllUser() {
         List<UserEntity> userList = userRepository.findAll();
@@ -146,12 +152,8 @@ public class WebController {
 
     @GetMapping(value="/api/user/{id}", produces = "application/hal+json")
     public ResponseEntity<UserModel> getUserById(@PathVariable(name = "id") Integer id) {
-
-
         Optional<UserEntity> user = userRepository.findById(id);
-
-
-        return user.map(userModelAssembler::toModel)
+       return user.map(userModelAssembler::toModel)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
