@@ -17,7 +17,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Entity
 @Table(name = "groups")
-public class GroupEntity implements Serializable {
+public class Group implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -29,11 +29,9 @@ public class GroupEntity implements Serializable {
     private String groupName;
 
 
-    @ToString.Exclude
-    @ManyToMany(fetch = FetchType.EAGER,mappedBy = "groupList")
-    //@JsonIgnore
-    @JsonBackReference
-    //@JsonManagedReference
-    List<UserEntity> userList;
+    //@ToString.Exclude
+    //@ManyToMany(fetch = FetchType.EAGER,mappedBy = "groupList")
+    //@JsonBackReference
+    //List<User> userList;
 
 }

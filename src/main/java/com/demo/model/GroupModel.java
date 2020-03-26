@@ -20,6 +20,6 @@ public class GroupModel extends RepresentationModel<GroupModel> {
 
     private Integer id;
     private String groupName;
-    List<UserModel> userList;
+   // List<UserModel> userList;
 
 }

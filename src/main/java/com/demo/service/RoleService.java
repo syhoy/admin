@@ -1,14 +1,14 @@
 package com.demo.service;
 
-import com.demo.entity.RoleEntity;
+import com.demo.entity.Role;
 
 import java.util.List;
 
 
 public interface RoleService {
 
-    List<RoleEntity> findAll();
+    List<Role> findAll();
 
 
-    RoleEntity findById(Integer id);
+    Role findById(Integer id);
 }

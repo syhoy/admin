@@ -1,9 +1,7 @@
 package com.demo.assembler;
 
 import com.demo.controller.WebController;
-import com.demo.entity.GroupEntity;
-import com.demo.entity.RoleEntity;
-import com.demo.model.GroupModel;
+import com.demo.entity.Role;
 import com.demo.model.RoleModel;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.Link;
@@ -16,18 +14,17 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 
 @Component
-public class RoleModelAssembler extends RepresentationModelAssemblerSupport<RoleEntity, RoleModel> {
+public class RoleModelAssembler extends RepresentationModelAssemblerSupport<Role, RoleModel> {
 
     public RoleModelAssembler() {
          super(WebController.class, RoleModel.class);
     }
 
     @Override
-    public RoleModel toModel(RoleEntity entity) {
+    public RoleModel toModel(Role entity) {
         RoleModel roleModel = instantiateModel(entity);
 
-        Link link = linkTo(WebMvcLinkBuilder.methodOn(WebController.class).getRoleById(entity.getId())).withSelfRel();
-        roleModel.add(link);
+        roleModel.add(linkTo(WebMvcLinkBuilder.methodOn(WebController.class).getRoleById(entity.getId())).withSelfRel());
 
         roleModel.setId(entity.getId());
         roleModel.setRoleName(entity.getRoleName());
@@ -36,12 +33,10 @@ public class RoleModelAssembler extends RepresentationModelAssemblerSupport<Role
     }
 
     @Override
-    public  CollectionModel<RoleModel> toCollectionModel(Iterable<? extends RoleEntity> entities) {
+    public  CollectionModel<RoleModel> toCollectionModel(Iterable<? extends Role> entities) {
         CollectionModel<RoleModel> roleModels = super.toCollectionModel(entities);
 
-        //groupModel.add(linkTo(methodOn(WebController.class).getAllGroup()).withSelfRel());
-        Link link = linkTo(methodOn(WebController.class).getAllRole()).withSelfRel();
-        roleModels.add(link);
+        roleModels.add( linkTo(methodOn(WebController.class).getRoleAll()).withSelfRel());
 
         return roleModels;
     }

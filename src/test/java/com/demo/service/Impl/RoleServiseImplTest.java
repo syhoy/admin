@@ -1,7 +1,7 @@
 package com.demo.service.Impl;
 
-import com.demo.entity.RoleEntity;
-import com.demo.entity.UserEntity;
+import com.demo.entity.Role;
+import com.demo.entity.User;
 import com.demo.service.RoleService;
 import com.demo.service.UserService;
 import org.junit.Test;
@@ -28,7 +28,7 @@ public class RoleServiseImplTest {
     @Test
     public void  testFindAll(){
 
-        List<RoleEntity> roleList = roleService.findAll();
+        List<Role> roleList = roleService.findAll();
 
         roleList.forEach(r->
             System.out.println("## role:"+r));
@@ -37,12 +37,12 @@ public class RoleServiseImplTest {
         // user.getGroupList().forEach(g->System.out.println("## group:"+g.getGroupName()));
         //System.out.println("## user:"+user.getLastName());
 
-        //RoleEntity role = roleService.findById(2);
+        //Role role = roleService.findById(2);
         //System.out.println("## role:"+role.getRoleName());
 
         //role.getUserList().forEach(x->System.out.println("## user:"+x.getLastName()));
 
-        //List<UserEntity> ul = role.getUserList();
+        //List<User> ul = role.getUserList();
 
         //System.out.println("## userlist:"+ul);
 
@@ -54,19 +54,19 @@ public class RoleServiseImplTest {
     @Test
     public void  testFindById(){
         int id = 1;
-        UserEntity user = userService.findById(id);
+        User user = userService.findById(id);
 
         // user.getGroupList().forEach(g->System.out.println("## group:"+g.getGroupName()));
         System.out.println("## user:"+user.getLastName());
 
-        RoleEntity role = roleService.findById(2);
+        Role role = roleService.findById(2);
         System.out.println("## role:"+role.getRoleName());
 
         //role.getUserList().forEach(x->System.out.println("## user:"+x.getLastName()));
 
-        List<UserEntity> ul = role.getUserList();
+        //List<User> ul = role.getUserList();
 
-        System.out.println("## userlist:"+ul);
+        //System.out.println("## userlist:"+ul);
 
 
 

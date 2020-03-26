@@ -1,6 +1,6 @@
 package com.demo.service.Impl;
 
-import com.demo.entity.RoleEntity;
+import com.demo.entity.Role;
 import com.demo.repository.RoleRepository;
 import com.demo.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +18,12 @@ public class RoleServiseImpl implements RoleService {
     private RoleRepository roleRepository;
 
     @Override
-    public List<RoleEntity> findAll() {
+    public List<Role> findAll() {
         return roleRepository.findAll();
     }
 
     @Override
-    public RoleEntity findById(Integer id) {
+    public Role findById(Integer id) {
         return roleRepository.findById(id).orElse(null);
     }
 }

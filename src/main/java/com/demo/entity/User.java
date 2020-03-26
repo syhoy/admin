@@ -1,14 +1,12 @@
 package com.demo.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @Builder
@@ -16,7 +14,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Entity
 @Table(name = "user")
-public class UserEntity implements Serializable {
+public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -38,7 +36,7 @@ public class UserEntity implements Serializable {
     //@JsonBackReference
     //@JsonManagedReference
     //@JsonIgnore
-    private RoleEntity role;
+    private Role role;
 
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -48,6 +46,6 @@ public class UserEntity implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "group_id"))
     //@JsonIgnore
     // @JsonBackReference
-    @JsonManagedReference
-    List<GroupEntity> groupList;
+    //@JsonManagedReference
+    List<Group> groupList=new ArrayList<>();
 }

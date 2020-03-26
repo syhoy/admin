@@ -1,17 +1,16 @@
 package com.demo.service;
 
-import com.demo.entity.GroupEntity;
-import com.demo.entity.RoleEntity;
+import com.demo.entity.Group;
 
 import java.util.List;
 
 
 public interface GroupService {
 
-    GroupEntity findById(Integer id);
+    Group findById(Integer id);
 
 
-    List<GroupEntity> findAll();
+    List<Group> findAll();
 
 
 

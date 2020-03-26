@@ -1,7 +1,5 @@
 package com.demo.model;
 
-import com.demo.entity.GroupEntity;
-import com.demo.entity.RoleEntity;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.*;
@@ -22,6 +20,6 @@ public class RoleModel extends RepresentationModel<RoleModel> {
 
     private Integer id;
     private String roleName;
-    List<UserModel> userList;
+    //List<UserModel> userList;
 
 }

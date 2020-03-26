@@ -19,7 +19,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Entity
 @Table(name = "role")
-public class RoleEntity implements Serializable {
+public class Role implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -31,11 +31,11 @@ public class RoleEntity implements Serializable {
     private String roleName;
 
 
-    @ToString.Exclude
-    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, fetch = FetchType.EAGER)//, orphanRemoval = true)
-    @JsonIgnore
+   // @ToString.Exclude
+   // @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, fetch = FetchType.EAGER)//, orphanRemoval = true)
+    //@JsonIgnore
     //@JsonBackReference
     //@JsonManagedReference
-    private List<UserEntity> userList;// = new ArrayList<UserEntity>();
+    //private List<User> userList;// = new ArrayList<User>();
 
 }

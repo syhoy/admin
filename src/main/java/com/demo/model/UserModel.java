@@ -1,6 +1,4 @@
 package com.demo.model;
-import com.demo.entity.GroupEntity;
-import com.demo.entity.RoleEntity;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.*;

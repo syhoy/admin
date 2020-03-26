@@ -1,10 +1,8 @@
 package com.demo.assembler;
 
 import com.demo.controller.WebController;
-import com.demo.entity.GroupEntity;
-import com.demo.entity.UserEntity;
+import com.demo.entity.Group;
 import com.demo.model.GroupModel;
-import com.demo.model.UserModel;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.Link;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
@@ -16,25 +14,19 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-public class GroupModelAssembler extends RepresentationModelAssemblerSupport<GroupEntity, GroupModel> {
+public class GroupModelAssembler extends RepresentationModelAssemblerSupport<Group, GroupModel> {
 
     public GroupModelAssembler() {
          super(WebController.class, GroupModel.class);
     }
 
     @Override
-    public GroupModel toModel(GroupEntity entity) {
+    public GroupModel toModel(Group entity) {
         GroupModel groupModel = instantiateModel(entity);
 
-        Link link = linkTo(WebMvcLinkBuilder.methodOn(WebController.class).getGroupById(entity.getId())).withSelfRel();
-        groupModel.add(link);
 
-/*
-        groupModel.add((Iterable<Link>) linkTo(
-                methodOn(WebController.class)
-                        .getUserById(entity.getId()))
-                .withSelfRel());
-*/
+        groupModel.add(linkTo(WebMvcLinkBuilder.methodOn(WebController.class).getGroupById(entity.getId())).withSelfRel());
+
         groupModel.setId(entity.getId());
         groupModel.setGroupName(entity.getGroupName());
 
@@ -42,13 +34,9 @@ public class GroupModelAssembler extends RepresentationModelAssemblerSupport<Gro
     }
 
     @Override
-    public CollectionModel<GroupModel> toCollectionModel(Iterable<? extends GroupEntity> entities) {
+    public CollectionModel<GroupModel> toCollectionModel(Iterable<? extends Group> entities) {
         CollectionModel<GroupModel> groupModels = super.toCollectionModel(entities);
-
-        //groupModel.add(linkTo(methodOn(WebController.class).getAllGroup()).withSelfRel());
-        Link link = linkTo(methodOn(WebController.class).getAllGroup()).withSelfRel();
-        groupModels.add(link);
-
+        groupModels.add(linkTo(methodOn(WebController.class).getGroupAll()).withSelfRel());
         return groupModels;
     }
 

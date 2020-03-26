@@ -1,6 +1,7 @@
 package com.demo.service.Impl;
 
-import com.demo.entity.UserEntity;
+import com.demo.entity.Group;
+import com.demo.entity.User;
 import com.demo.repository.UserRepository;
 import com.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +19,17 @@ public class UserServiseImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
-    public List<UserEntity> findAll() {
+    public List<User> findAll() {
         return userRepository.findAll();
     }
 
     @Override
-    public UserEntity findById(Integer id) {
+    public User findById(Integer id) {
         return userRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<Group> getGList(Integer id) {
+        return  userRepository.getGroupList(id);
     }
 }

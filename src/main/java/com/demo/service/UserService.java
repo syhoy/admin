@@ -1,16 +1,17 @@
 package com.demo.service;
 
-import com.demo.entity.UserEntity;
-import com.demo.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.demo.entity.Group;
+import com.demo.entity.User;
 
 import java.util.List;
 
 
 public interface UserService {
 
-    List<UserEntity> findAll();
+    List<User> findAll();
 
 
-    UserEntity findById(Integer id);
+    User findById(Integer id);
+
+    List<Group> getGList(Integer pm);
 }
