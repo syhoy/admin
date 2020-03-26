@@ -6,12 +6,16 @@ import com.demo.entity.User;
 import com.demo.repository.GroupRepository;
 import com.demo.repository.RoleRepository;
 import com.demo.repository.UserRepository;
+import com.demo.service.GroupService;
+import com.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 
 
 //Заполнение данными БД
@@ -23,6 +27,9 @@ public class DataInit implements ApplicationRunner {
     private RoleRepository roleRepository;
 
     private GroupRepository groupRepository;
+
+    @Autowired
+    private UserService userService;
 
 
 
@@ -85,6 +92,12 @@ public class DataInit implements ApplicationRunner {
         userRepository.save(user);
 
 
+       // User u = userService.findById(1);
+
+
+        //List<Group> gl = u.getGroupList();
+
+       //System.out.println("## gl:"+u.getGroupList());
 
 
         user=new User();
@@ -106,6 +119,8 @@ public class DataInit implements ApplicationRunner {
         user.setLastName("Сергеев");
         user.setRole(role2);
         userRepository.save(user);
+
+
 
 
 

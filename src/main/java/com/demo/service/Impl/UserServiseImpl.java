@@ -8,11 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
 import java.util.List;
 
 
 @Service
 @Transactional
+//@PersistenceContext(type = PersistenceContextType.EXTENDED)
 public class UserServiseImpl implements UserService {
 
     @Autowired
@@ -29,7 +32,7 @@ public class UserServiseImpl implements UserService {
     }
 
     @Override
-    public List<Group> getGList(Integer id) {
+    public List<Group> getGroupList(Integer id) {
         return  userRepository.getGroupList(id);
     }
 }

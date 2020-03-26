@@ -20,7 +20,7 @@ public interface UserRepository extends JpaRepository<User,Integer> {
     //todo
     @Query("select g from User u " +
             "join "+
-            //"fetch"+  //???????
+            //"fetch "+  //???????
             "u.groupList g " +
             "where u.id = :id")
     List<Group> getGroupList(@Param("id") Integer id);

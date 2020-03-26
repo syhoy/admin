@@ -2,6 +2,8 @@ package com.demo.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
+import org.hibernate.collection.internal.PersistentList;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,6 +16,8 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "user")
+//@PersistenceContext(type = PersistenceContextType.EXTENDED)
+//@Transactional()
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -34,13 +38,13 @@ public class User implements Serializable {
     private Role role;
 
     //todo
-    @ManyToMany(fetch = FetchType.EAGER)  //???????
+    @ToString.Exclude
+    //@ManyToMany(fetch = FetchType.EAGER)  //???????
+    @ManyToMany(fetch = FetchType.LAZY)  //???????
     @JoinTable(
             name = "user_group",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "group_id"))
-    //@JsonIgnore
-    // @JsonBackReference
-    //@JsonManagedReference
-    List<Group> groupList=new ArrayList<>();
+
+    List<Group> groupList = new ArrayList<>();
 }

@@ -13,5 +13,5 @@ public interface UserService {
 
     User findById(Integer id);
 
-    List<Group> getGList(Integer pm);
+    List<Group> getGroupList(Integer id);
 }

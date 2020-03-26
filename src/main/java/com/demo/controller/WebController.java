@@ -17,6 +17,7 @@ import com.demo.repository.UserRepository;
 import com.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
+import org.springframework.hateoas.server.mvc.ControllerLinkBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -62,13 +63,21 @@ public class WebController {
 
     @GetMapping(value="/api/user", produces = "application/hal+json")
     public ResponseEntity<RootModel> getUser() {
-        RootModel rootModel = new RootModel();
+        RootModel rootModel = new RootModel("RootUser");
 
 
         rootModel.add(linkTo(methodOn(WebController.class).getUser()).withSelfRel());
+
+
+
         rootModel.add(linkTo(methodOn(WebController.class).getUserAll()).withRel("users"));
+        //rootModel.add(linkTo(methodOn(WebController.class).getUser()).slash("{id}").withRel("user"));
         rootModel.add(linkTo(methodOn(WebController.class).getGroupAll()).withRel("groups"));
+        //rootModel.add(linkTo(methodOn(WebController.class).getGroupAll()).slash("{id}").withRel("group"));
         rootModel.add(linkTo(methodOn(WebController.class).getRoleAll()).withRel("roles"));
+        //rootModel.add(linkTo(methodOn(WebController.class).getRoleAll()).slash("{id}").withRel("role"));
+
+
 
         return new ResponseEntity<>(rootModel,HttpStatus.OK);
     }

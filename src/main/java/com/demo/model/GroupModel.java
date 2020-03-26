@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @JsonRootName(value = "group")
-@Relation(collectionRelation = "groupList")
+@Relation(collectionRelation = "groups")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GroupModel extends RepresentationModel<GroupModel> {
 

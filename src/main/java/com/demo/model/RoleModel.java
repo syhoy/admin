@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @JsonRootName(value = "role")
-@Relation(collectionRelation = "roleList")
+@Relation(collectionRelation = "roles")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RoleModel extends RepresentationModel<RoleModel> {
 
