@@ -38,7 +38,7 @@ public class UserModelAssembler extends RepresentationModelAssemblerSupport<User
         userModel.setFirstName(entity.getFirstName());
         userModel.setLastName(entity.getLastName());
         userModel.setRole(toRoleModel(entity.getRole()));
-        userModel.add(linkTo(methodOn(WebController.class).getUserByIdGroups(userModel.getId())).withRel("groups"));
+        userModel.add(linkTo(methodOn(WebController.class).getUserByIdGroup(userModel.getId())).withRel("groups"));
         userModel.setGroupList(toCroupModel(entity.getGroupList()));
         return userModel;
     }
