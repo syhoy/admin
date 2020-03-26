@@ -16,16 +16,15 @@ public interface UserRepository extends JpaRepository<User,Integer> {
     @Override
      List<User> findAll();
 
+
+    //todo
     @Query("select g from User u " +
             "join "+
-            //"fetch"+
+            //"fetch"+  //???????
             "u.groupList g " +
             "where u.id = :id")
     List<Group> getGroupList(@Param("id") Integer id);
 
 
-/*
-    @Query("select u from User u")
-    List<User> getUList();//(@Param("pm") Integer pm);
-    */
+
 }

@@ -28,18 +28,13 @@ public class User implements Serializable {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
-   // @Column(name = "role_id")
-    //private Integer roleId;
-    //@ToString.Exclude
+
     @ManyToOne
     @JoinColumn(name = "role_id")
-    //@JsonBackReference
-    //@JsonManagedReference
-    //@JsonIgnore
     private Role role;
 
-
-    @ManyToMany(fetch = FetchType.EAGER)
+    //todo
+    @ManyToMany(fetch = FetchType.EAGER)  //???????
     @JoinTable(
             name = "user_group",
             joinColumns = @JoinColumn(name = "user_id"),

@@ -59,9 +59,8 @@ public class WebController {
     private RoleModelAssembler roleModelAssembler;
 
 
-    //Ендпоинты для моделей:
 
-    @GetMapping(value="/api/user/", produces = "application/hal+json")
+    @GetMapping(value="/api/user", produces = "application/hal+json")
     public ResponseEntity<RootModel> getUser() {
 
         RootModel rootModel = new RootModel();
@@ -72,7 +71,6 @@ public class WebController {
         rootModel.add(linkTo(methodOn(WebController.class).getGroupAll()).withRel("Groups"));
         rootModel.add(linkTo(methodOn(WebController.class).getRoleAll()).withRel("Roles"));
 
-        rootModel.add(linkTo(methodOn(WebController.class).getUser()).withSelfRel());
 
         return new ResponseEntity<>(rootModel,HttpStatus.OK);
     }
@@ -104,8 +102,6 @@ public class WebController {
                 //.map(ResponseEntity::ok)
                 //.orElse(ResponseEntity.notFound().build());
     }
-
-
 
 
     //****
