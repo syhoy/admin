@@ -4,9 +4,9 @@ package com.demo.controller;
 import com.demo.assembler.GroupModelAssembler;
 import com.demo.assembler.RoleModelAssembler;
 import com.demo.assembler.UserModelAssembler;
-import com.demo.entity.Group;
-import com.demo.entity.Role;
-import com.demo.entity.User;
+import com.demo.entity.GroupEntity;
+import com.demo.entity.RoleEntity;
+import com.demo.entity.UserEntity;
 import com.demo.model.GroupModel;
 import com.demo.model.RoleModel;
 import com.demo.model.RootModel;
@@ -14,23 +14,24 @@ import com.demo.model.UserModel;
 import com.demo.repository.GroupRepository;
 import com.demo.repository.RoleRepository;
 import com.demo.repository.UserRepository;
+import com.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-
 import org.springframework.hateoas.Link;
+
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
-
-
 //import org.springframework.hateoas.CollectionModel;
 //import org.springframework.hateoas.EntityModel;
 
@@ -59,56 +60,107 @@ public class WebController {
     private RoleModelAssembler roleModelAssembler;
 
 
+    @GetMapping(value="/api/root", produces = "application/hal+json")
+    public ResponseEntity<RootModel> getRoot() {
+        RootModel rootModel = new RootModel(linkTo(methodOn(WebController.class).getRoot()).withSelfRel());
 
-    @GetMapping(value="/api/user", produces = "application/hal+json")
-    public ResponseEntity<RootModel> getUser() {
-
-        RootModel rootModel = new RootModel();
-
-        rootModel.add(linkTo(methodOn(WebController.class).getUser()).withSelfRel());
-
-        rootModel.add(linkTo(methodOn(WebController.class).getUserAll()).withRel("Users"));
-        rootModel.add(linkTo(methodOn(WebController.class).getGroupAll()).withRel("Groups"));
-        rootModel.add(linkTo(methodOn(WebController.class).getRoleAll()).withRel("Roles"));
-
+        rootModel.add(linkTo(methodOn(WebController.class).getAllUser()).withRel("users"));
+        rootModel.add(linkTo(methodOn(WebController.class).getAllGroup()).withRel("groups"));
+        rootModel.add(linkTo(methodOn(WebController.class).getAllRole()).withRel("roles"));
 
         return new ResponseEntity<>(rootModel,HttpStatus.OK);
     }
 
 
-    @GetMapping(value="/api/user/all", produces = "application/hal+json")
-    public ResponseEntity<CollectionModel<UserModel>> getUserAll() {
-        List<User> userList = userRepository.findAll();
-        return new ResponseEntity<>(userModelAssembler.toCollectionModel(userList), HttpStatus.OK);
+    @GetMapping(value="/api/root/user", produces = "application/hal+json")
+    public ResponseEntity<RootModel> getRootUser() {
+        RootModel rootModel = new RootModel();
+
+        Link link = linkTo(methodOn(WebController.class).getRootUser()).withSelfRel();
+        rootModel.add(link);
+
+        List<UserEntity> userList = userRepository.findAll();
+
+        CollectionModel<UserModel> userModels = userModelAssembler.toCollectionModel(userList);
+        rootModel.setUserList(userModels);
+
+        return new ResponseEntity<>(rootModel,HttpStatus.OK);
+    }
+
+    @GetMapping(value="/api/root/user/{id}", produces = "application/hal+json")
+    public ResponseEntity<RootModel> getRootUserById(@PathVariable(name = "id") Integer id) {
+        RootModel rootModel = new RootModel();
+
+        Link link = linkTo(methodOn(WebController.class).getRootUserById(id)).withSelfRel();
+        rootModel.add(link);
+
+        List<UserEntity> userList = new ArrayList<>();
+
+        userRepository.findById(id).ifPresent(u->userList.add(u));
+
+        CollectionModel<UserModel> userModels = userModelAssembler.toCollectionModel(userList);
+        rootModel.setUserList(userModels);
+
+        return new ResponseEntity<>(rootModel,HttpStatus.OK);
+    }
+
+    @GetMapping(value="/api/root/group", produces = "application/hal+json")
+    public ResponseEntity<RootModel> getRootGroup() {
+
+
+        RootModel rootModel = new RootModel();
+
+        Link link = linkTo(methodOn(WebController.class).getRootGroup()).withSelfRel();
+        rootModel.add(link);
+
+        List<GroupEntity> groupList = groupRepository.findAll();
+
+        CollectionModel<GroupModel> groupModels = groupModelAssembler.toCollectionModel(groupList);
+        rootModel.setGroupList(groupModels);
+
+        return new ResponseEntity<>(rootModel,HttpStatus.OK);
+    }
+
+
+    @GetMapping(value="/api/root/group/{id}", produces = "application/hal+json")
+    public ResponseEntity<RootModel> getRootGroupById(@PathVariable(name = "id") Integer id) {
+        RootModel rootModel = new RootModel();
+
+        Link link = linkTo(methodOn(WebController.class).getRootGroupById(id)).withSelfRel();
+        rootModel.add(link);
+
+        List<GroupEntity> groupList = new ArrayList<>();
+
+        groupRepository.findById(id).ifPresent(g->groupList.add(g));
+
+        CollectionModel<GroupModel> groupModels = groupModelAssembler.toCollectionModel(groupList);
+        rootModel.setGroupList(groupModels);
+
+        return new ResponseEntity<>(rootModel,HttpStatus.OK);
+    }
+
+
+
+    @GetMapping(value="/api/user", produces = "application/hal+json")
+    public ResponseEntity<CollectionModel<UserModel>> getAllUser() {
+        List<UserEntity> userList = userRepository.findAll();
+        return new ResponseEntity<>(
+                userModelAssembler.toCollectionModel(userList),
+                HttpStatus.OK);
     }
 
     @GetMapping(value="/api/user/{id}", produces = "application/hal+json")
     public ResponseEntity<UserModel> getUserById(@PathVariable(name = "id") Integer id) {
-        Optional<User> user = userRepository.findById(id);
+        Optional<UserEntity> user = userRepository.findById(id);
        return user.map(userModelAssembler::toModel)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
 
-    @GetMapping(value="/api/user/{id}/groups", produces = "application/hal+json")
-    public ResponseEntity<UserModel> getUserByIdGroups(@PathVariable(name = "id") Integer id) {
-        //Optional<User> user = userRepository.findById(id);
-        User user = userRepository.findById(id).orElse(null);
-
-        user.setGroupList(userRepository.getGroupList(id));
-
-        return new ResponseEntity<>(userModelAssembler.toModel(user),HttpStatus.OK);
-                //.map(ResponseEntity::ok)
-                //.orElse(ResponseEntity.notFound().build());
-    }
-
-
-    //****
-
-    @GetMapping(value="/api/group/all", produces = "application/hal+json")
-    public ResponseEntity<CollectionModel<GroupModel>> getGroupAll() {
-        List<Group> groupList = groupRepository.findAll();
+    @GetMapping(value="/api/group", produces = "application/hal+json")
+    public ResponseEntity<CollectionModel<GroupModel>> getAllGroup() {
+        List<GroupEntity> groupList = groupRepository.findAll();
         return new ResponseEntity<>(
                 groupModelAssembler.toCollectionModel(groupList),
                 HttpStatus.OK);
@@ -122,9 +174,9 @@ public class WebController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping(value="/api/role/all", produces = "application/hal+json")
-    public ResponseEntity<CollectionModel<RoleModel>> getRoleAll() {
-        List<Role> roleList = roleRepository.findAll();
+    @GetMapping(value="/api/role", produces = "application/hal+json")
+    public ResponseEntity<CollectionModel<RoleModel>> getAllRole() {
+        List<RoleEntity> roleList = roleRepository.findAll();
         return new ResponseEntity<>(
                 roleModelAssembler.toCollectionModel(roleList),
                 HttpStatus.OK);
