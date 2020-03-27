@@ -15,7 +15,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = false)
 @JsonRootName(value = "user")
 @Relation(collectionRelation = "users")
-@JsonInclude(JsonInclude.Include.NON_NULL)
+//@JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserModel extends RepresentationModel<UserModel> {
 
     private Integer id;

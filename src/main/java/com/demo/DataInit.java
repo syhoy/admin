@@ -92,14 +92,6 @@ public class DataInit implements ApplicationRunner {
         userRepository.save(user);
 
 
-       // User u = userService.findById(1);
-
-
-        //List<Group> gl = u.getGroupList();
-
-       //System.out.println("## gl:"+u.getGroupList());
-
-
         user=new User();
         user.setFirstName("Петр");
         user.setLastName("Петров");
@@ -122,40 +114,5 @@ public class DataInit implements ApplicationRunner {
 
 
 
-
-
-        //Связи пользоватедь - группа
-        /*
-        UserGroupEntity userGroup = new UserGroupEntity();
-        userGroup.setGroupId(1);
-        userGroup.setUserId(1);
-        userGroupRepository.save(userGroup);
-
-        userGroup = new UserGroupEntity();
-        userGroup.setGroupId(2);
-        userGroup.setUserId(1);
-        userGroupRepository.save(userGroup);
-
-        userGroup = new UserGroupEntity();
-        userGroup.setGroupId(3);
-        userGroup.setUserId(1);
-        userGroupRepository.save(userGroup);
-
-        userGroup = new UserGroupEntity();
-        userGroup.setGroupId(4);
-        userGroup.setUserId(1);
-        userGroupRepository.save(userGroup);
-
-
-        userGroup = new UserGroupEntity();
-        userGroup.setGroupId(4);
-        userGroup.setUserId(3);
-        userGroupRepository.save(userGroup);
-
-        userGroup = new UserGroupEntity();
-        userGroup.setGroupId(1);
-        userGroup.setUserId(3);
-        userGroupRepository.save(userGroup);
-*/
     }
 }

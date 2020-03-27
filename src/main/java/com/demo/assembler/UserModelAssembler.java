@@ -16,6 +16,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 import org.springframework.stereotype.Component;
 
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -31,6 +32,19 @@ public class UserModelAssembler extends RepresentationModelAssemblerSupport<User
 
     @Override
     public UserModel toModel(User entity) {
+        UserModel userModel = instantiateModel(entity);
+        Link link = linkTo(methodOn(WebController.class).getUserById(entity.getId())).withSelfRel();
+        userModel.add(link);
+        userModel.setId(entity.getId());
+        userModel.setFirstName(entity.getFirstName());
+        userModel.setLastName(entity.getLastName());
+        userModel.setRole(toRoleModel(entity.getRole()));
+        userModel.add(linkTo(methodOn(WebController.class).getUserByIdGroup(userModel.getId())).withRel("groups"));
+        userModel.setGroupList(new ArrayList<>());
+        return userModel;
+    }
+
+    public UserModel toModelWithGroups(User entity) {
         UserModel userModel = instantiateModel(entity);
         Link link = linkTo(methodOn(WebController.class).getUserById(entity.getId())).withSelfRel();
         userModel.add(link);
