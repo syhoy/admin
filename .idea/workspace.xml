@@ -3,17 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1353e5d3-00ed-423e-aaae-7cc837869a91" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/DataInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/DataInit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/controller/WebController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/controller/WebController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/model/GroupModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/model/GroupModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/model/RoleModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/model/RoleModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/model/RootModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/model/RootModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/service/Impl/UserServiseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/service/Impl/UserServiseImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/demo/service/Impl/UserServiseImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/demo/service/Impl/UserServiseImplTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -549,16 +538,17 @@
       <option name="project" value="LOCAL" />
       <updated>1585217646726</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="&#10;&#10;modifay fetch Lazy">
+      <created>1585244694441</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1585244694441</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UserServiseImplTest_testFindById - 2020.03.26 at 22h 23m 33s.xml">
-      <configuration name="UserServiseImplTest.testFindById" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserServiseImplTest_testFindById - 2020.03.26 at 22h 24m 17s.xml">
-      <configuration name="UserServiseImplTest.testFindById" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="UserServiseImplTest_testFindById - 2020.03.26 at 22h 26m 16s.xml">
       <configuration name="UserServiseImplTest.testFindById" configurationId="JUnit" />
     </history-entry>
@@ -583,12 +573,18 @@
     <history-entry file="UserServiseImplTest_testFindAll - 2020.03.26 at 22h 39m 10s.xml">
       <configuration name="UserServiseImplTest.testFindAll" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="UserServiseImplTest_testFindAll - 2020.03.26 at 22h 41m 48s.xml">
+      <configuration name="UserServiseImplTest.testFindAll" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserServiseImplTest_testFindById - 2020.03.26 at 22h 42m 10s.xml">
+      <configuration name="UserServiseImplTest.testFindById" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19402985" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19402985" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -597,7 +593,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32981783" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.48705655" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.48705655" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -620,7 +616,8 @@
     <MESSAGE value="fist commit" />
     <MESSAGE value="add reaadme.txt+" />
     <MESSAGE value="ddd +++" />
-    <option name="LAST_COMMIT_MESSAGE" value="ddd +++" />
+    <MESSAGE value="&#10;&#10;modifay fetch Lazy" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;&#10;modifay fetch Lazy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
